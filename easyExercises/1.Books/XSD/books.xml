@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<libros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="books.xsd">
+    <libro>
+        <titulo>Saturno</titulo>
+        <autor>Pepe</autor>
+        <precio>20.10</precio>
+    </libro>
+</libros>
