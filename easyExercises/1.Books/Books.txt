@@ -1,0 +1,9 @@
+Crea un XML para un catálogo de libros básico, cada libro tiene los siguientes
+elementos:
+a. título (texto).
+b. autor (texto).
+c. precio (número decimal).
+Diseña el DTD para validar dicho XML, y el XSchema que incluya como restricciones
+que:
+• El precio debe ser un número mayor a 0.
+• El título y autor deben tener al menos 1 carácter, y no más de 50

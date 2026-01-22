@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
-<!DOCTYPE libros [
-    <!ELEMENT libros (libro+)>
-    <!ELEMENT libro (titulo, autor, precio)>
-    <!ELEMENT titulo (#PCDATA)>
-    <!ELEMENT autor (#PCDATA)>
-    <!ELEMENT precio (#PCDATA)>
-]>
+<!DOCTYPE libros SYSTEM "books.dtd">
 
 
 <libros>

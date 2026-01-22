@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE empleados SYSTEM "employers.dtd">
+
+<empleados>
+    <empleado>
+        <nombre></nombre>
+        <edad></edad>
+        <departamento></departamento>
+        <activo></activo>
+    </empleado>
+
+</empleados>

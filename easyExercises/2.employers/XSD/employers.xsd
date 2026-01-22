@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="edadEntre">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="18" />
+            <xs:maxInclusive value="65" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="restriccion">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="RRHH"/>
+            <xs:enumeration value="IT"/>
+            <xs:enumeration value="Ventas"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="estaActivo">
+        <xs:restriction base="xs:boolean" />
+
+    </xs:simpleType>
+
+    <xs:element name="empleados">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="empleado" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nombre"></xs:element>
+                        <xs:element name="edad" type="edadEntre"></xs:element>
+                        <xs:element name="departamento" type="restriccion"></xs:element>
+                        <xs:element name="activo" type="estaActivo"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    </xs:element>
+</xs:schema>
