@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<productos>
+    <producto>
+        <nombre>Tornillos</nombre>
+        <cantidad>100</cantidad>
+        <precio_unitario>0.99</precio_unitario>
+        <disponible disponible="si" />
+    </producto>
+</productos>
