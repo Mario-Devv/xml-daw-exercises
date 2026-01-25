@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<productos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="inventario.xsd">
+    <producto disponible="si">
+        <nombre>Tornillos</nombre>
+        <cantidad>100</cantidad>
+        <precio_unitario>0.99</precio_unitario>
+    </producto>
+</productos>
