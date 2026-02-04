@@ -1,0 +1,14 @@
+<!ELEMENT renomobile (dispositivos, valoraciones)>
+<!ELEMENT dispositivos (marcas, categorias, accesorios, estados_cosmeticos)>
+    <!ELEMENT marcas (marca+)>
+        <!ELEMENT marca EMPTY>
+    <!ELEMENT categorias (categoria+)>
+        <!ELEMENT categoria EMPTY>
+    <!ELEMENT accesorios (accesorio+)>
+        <!ELEMENT accesorio EMPTY>
+    <!ELEMENT estados_cosmeticos (estado_cosmetico+)>
+        <!ELEMENT estado_cosmetico (#PCDATA)>
+
+<!ELEMENT valoraciones (valoracion+)>
+    <!ELEMENT estado EMPTY>
+    <!ELEMENT extra EMPTY>
