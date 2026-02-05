@@ -1,0 +1,40 @@
+<!ELEMENT renomobile (dispositivos, valoraciones?)>
+<!ELEMENT dispositivos (marcas, categorias, accesorios?, estados_cosmeticos)>
+    <!ELEMENT marcas (marca+)>
+        <!ELEMENT marca EMPTY>
+    <!ELEMENT categorias (categoria+)>
+        <!ELEMENT categoria EMPTY>
+    <!ELEMENT accesorios (accesorio+)>
+        <!ELEMENT accesorio EMPTY>
+    <!ELEMENT estados_cosmeticos (estado_cosmetico+)>
+        <!ELEMENT estado_cosmetico (#PCDATA)>
+
+<!ELEMENT valoraciones (valoracion+)>
+    <!ELEMENT valoracion (estado*, extra*)>
+    <!ELEMENT estado EMPTY>
+    <!ELEMENT extra EMPTY>
+
+<!ATTLIST marca id ID #REQUIRED>
+<!ATTLIST marca nombre CDATA #REQUIRED>
+
+<!ATTLIST categoria id ID #REQUIRED>
+<!ATTLIST categoria nombre CDATA #REQUIRED>
+
+<!ATTLIST accesorio id ID #REQUIRED>
+<!ATTLIST accesorio nombre CDATA #REQUIRED>
+<!ATTLIST accesorio solo_categoria CDATA #IMPLIED>
+
+<!ATTLIST estado_cosmetico id ID #REQUIRED>
+<!ATTLIST estado_cosmetico garantia CDATA #REQUIRED>
+
+<!ATTLIST valoracion categoria IDREF #REQUIRED>
+<!ATTLIST valoracion marca IDREF #REQUIRED>
+<!ATTLIST valoracion modelo CDATA #REQUIRED>
+<!ATTLIST valoracion memoria CDATA #IMPLIED>
+
+<!ATTLIST estado nivel IDREF #REQUIRED>
+<!ATTLIST estado base CDATA #REQUIRED>
+
+<!ATTLIST extra accesorio CDATA #IMPLIED>
+<!ATTLIST extra incremento CDATA #REQUIRED>
+<!ATTLIST extra memoria CDATA #IMPLIED>
