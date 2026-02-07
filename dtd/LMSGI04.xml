@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE renomobile SYSTEM "./LMSGI04.dtd">
+
+<renomobile>
+    <dispositivos>
+        <marcas>
+            <marca id="MMNZ" nombre="Manzana"></marca>
+            <marca id="MLVC" nombre="Levecchio"></marca>
+            <marca id="MHAL" nombre="HAL computers"></marca>
+        </marcas>
+        <categorias>
+            <categoria id="CSW" nombre="Smartwatch"/>
+            <categoria id="CSP" nombre="Smartphone"/>
+            <categoria id="CTB" nombre="Tablet"/>
+            <categoria id="CPR" nombre="Portátil"/>
+        </categorias>
+        <accesorios>
+            <accesorio id="ACO" nombre="Cargador original"/>
+            <accesorio id="AFU" nombre="Funda de transporte"/>
+            <accesorio id="APP" nombre="Protector de pantalla"/>
+            <accesorio id="ACP" nombre="Carcasa protectora" solo_categoria="CSP"/>
+            <accesorio id="AFP" nombre="Funda protectora" solo_categoria="CTB"/>
+            <accesorio id="ADA" nombre="Dispositivo apuntador" solo_categoria="CPR"/>            
+        </accesorios>
+        <estados_cosmeticos>
+            <estado_cosmetico id="E1" garantia="6">Rastros de uso evidentes, pero plenamente funcional</estado_cosmetico>
+            <estado_cosmetico id="E2" garantia="9">Leves rastros de uso, poco evidentes a primera vista</estado_cosmetico>
+            <estado_cosmetico id="E3" garantia="12">Sin rastros de uso visibles</estado_cosmetico>
+        </estados_cosmeticos>        
+    </dispositivos>
+    <valoraciones>
+        <valoracion categoria="CSP" marca="MMNZ" modelo="M17" memoria="128">
+            <estado nivel="E1" base="300"/>
+            <estado nivel="E2" base="330"/>
+            <estado nivel="E3" base="410"/>
+            <extra accesorio="ACO" incremento="10"/>
+            <extra memoria="256" incremento="15"/>
+            <extra memoria="512" incremento="25"/>
+        </valoracion>
+        <valoracion categoria="CTB" marca="MLVC" modelo="R12">
+            <estado nivel="E1" base="200"/>
+            <estado nivel="E2" base="250"/>
+            <estado nivel="E3" base="280"/>
+            <extra accesorio="ACO" incremento="10"/>
+        </valoracion>
+        <valoracion categoria="CSP" marca="MMNZ" modelo="M18" memoria="256">
+            <estado nivel="E1" base="320"/>
+            <estado nivel="E2" base="350"/>
+            <estado nivel="E3" base="440"/>
+            <extra accesorio="ACO" incremento="20"/>
+            <extra accesorio="APP" incremento="12"/>
+            <extra memoria="512" incremento="25"/>
+            <extra memoria="1024" incremento="45"/>
+        </valoracion>
+        <valoracion categoria="CPR" marca="MHAL" modelo="OE2001">
+            <estado nivel="E1" base="500"/>
+            <estado nivel="E2" base="600"/>
+            <estado nivel="E3" base="720"/>
+            <extra accesorio="ACO" incremento="18"/>
+            <extra accesorio="ADA" incremento="15"/>
+        </valoracion>
+        <valoracion categoria="CSP" marca="MLVC" modelo="V20" memoria="128">
+            <estado nivel="E1" base="270"/>
+            <estado nivel="E2" base="310"/>
+            <estado nivel="E3" base="400"/>
+            <extra accesorio="ACO" incremento="11"/>
+            <extra memoria="256" incremento="28"/>
+            <extra memoria="512" incremento="38"/>
+        </valoracion>
+        <valoracion categoria="CTB" marca="MMNZ" modelo="A30">
+            <estado nivel="E1" base="210"/>
+            <estado nivel="E2" base="240"/>
+            <estado nivel="E3" base="300"/>
+            <extra accesorio="ACO" incremento="13"/>
+        </valoracion>
+        <valoracion categoria="CPR" marca="MHAL" modelo="X100">
+            <estado nivel="E1" base="410"/>
+            <estado nivel="E2" base="450"/>
+            <estado nivel="E3" base="530"/>
+            <extra accesorio="ACO" incremento="15"/>
+        </valoracion>
+        <valoracion categoria="CPR" marca="MLVC" modelo="P75">
+            <estado nivel="E1" base="550"/>
+            <estado nivel="E2" base="590"/>
+            <estado nivel="E3" base="650"/>
+            <extra accesorio="ACO" incremento="32"/>
+            <extra accesorio="ADA" incremento="18"/>
+        </valoracion>
+        <valoracion categoria="CTB" marca="MHAL" modelo="G35">
+            <estado nivel="E1" base="250"/>
+            <estado nivel="E2" base="290"/>
+            <estado nivel="E3" base="330"/>
+            <extra accesorio="ACO" incremento="32"/>
+            <extra accesorio="AFP" incremento="10"/>
+        </valoracion>
+        <valoracion categoria="CSP" marca="MMNZ" modelo="P9" memoria="256">
+            <estado nivel="E1" base="340"/>
+            <estado nivel="E2" base="380"/>
+            <estado nivel="E3" base="460"/>
+            <extra accesorio="ACO" incremento="36"/>
+            <extra accesorio="APP" incremento="14"/>
+            <extra memoria="512" incremento="20"/>
+            <extra memoria="1024" incremento="42"/>
+        </valoracion>
+    </valoraciones>
+</renomobile>
