@@ -1,40 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="onlyThisMemory">
-        <xs:simpleType>
-            <xs:restriction base="xs:integer">
-                <xs:enumeration value="128" />
-                <xs:enumeration value="256" />
-                <xs:enumeration value="512" />
-                <xs:enumeration value="1024" />
-            </xs:restriction>
-        </xs:simpleType>
-    </xs:element>
 
-    <xs:element name="maxName">
-        <xs:simpleType>
-            <xs:restriction base="xs:string">
-                <xs:length value="30" />
-            </xs:restriction>
-        </xs:simpleType>
-    </xs:element>
+    <xs:simpleType name="onlyThisMemory">
+        <xs:restriction base="xs:integer">
+            <xs:enumeration value="128" />
+            <xs:enumeration value="256" />
+            <xs:enumeration value="512" />
+            <xs:enumeration value="1024" />
+        </xs:restriction>
+    </xs:simpleType>
 
-    <xs:element name="maxDecimal">
-        <xs:simpleType>
-            <xs:restriction base="xs:decimal">
-                <xs:fractionDigits value="2" />
-            </xs:restriction>
-        </xs:simpleType>
-    </xs:element>
+    <xs:simpleType name="maxName">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
 
-    <xs:element name="onlyThisNumebers">
-        <xs:simpleType>
-            <xs:restriction base="xs:integer">
-                <xs:minInclusive value="0" />
-                <xs:maxInclusive value="36" />
-            </xs:restriction>
-        </xs:simpleType>
-    </xs:element>
+    <xs:simpleType name="maxDecimal">
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="onlyThisNumebers">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="36" />
+        </xs:restriction>
+    </xs:simpleType>
+
 
     <xs:element name="renomobile">
         <xs:complexType>
@@ -45,20 +39,27 @@
                             <xs:element name="marcas">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="marca" />
-                                        <xs:element name="marca" />
-                                        <xs:element name="marca" />
+                                        <xs:element name="marca" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="id" type="xs:ID" use="required" />
+                                                <xs:attribute name="nombre" type="xs:string" />
+                                            </xs:complexType>
+                                        </xs:element>
                                     </xs:sequence>
+
+
                                 </xs:complexType>
                             </xs:element>
 
                             <xs:element name="categorias">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="categoria" />
-                                        <xs:element name="categoria" />
-                                        <xs:element name="categoria" />
-                                        <xs:element name="categoria" />
+                                        <xs:element name="categoria" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="id" type="xs:ID" use="required" />
+                                                <xs:attribute name="nombre" type="xs:string" />
+                                            </xs:complexType>
+                                        </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
@@ -66,12 +67,14 @@
                             <xs:element name="accesorios">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="accesorio" />
-                                        <xs:element name="accesorio" />
-                                        <xs:element name="accesorio" />
-                                        <xs:element name="accesorio" />
-                                        <xs:element name="accesorio" />
-                                        <xs:element name="accesorio" />
+                                        <xs:element name="accesorio" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="id" type="xs:ID" use="required" />
+                                                <xs:attribute name="nombre" type="maxName" />
+                                                <xs:attribute name="solo_categoria" type="xs:IDREF"
+                                                    use="optional" />
+                                            </xs:complexType>
+                                        </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
@@ -79,9 +82,18 @@
                             <xs:element name="estados_cosmeticos">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="estado_cosmetico" />
-                                        <xs:element name="estado_cosmetico" />
-                                        <xs:element name="estado_cosmetico" />
+                                        <xs:element name="estado_cosmetico" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute name="id" type="xs:ID"
+                                                            use="required" />
+                                                        <xs:attribute name="garantia"
+                                                            type="onlyThisNumebers" use="required" />
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
@@ -89,22 +101,54 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-            
                 <xs:element name="valoraciones">
+
                     <xs:complexType>
-                        
+                        <xs:sequence>
+                            <xs:element name="valoracion" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:choice maxOccurs="unbounded">
+                                        <xs:element name="estado">
+                                            <xs:complexType>
+                                                <xs:attribute name="nivel"
+                                                    type="xs:IDREF" use="required" />
+                                                <xs:attribute name="base"
+                                                    type="maxDecimal" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+
+                                        <xs:element name="extra">
+                                            <xs:complexType>
+                                                <xs:attribute name="memoria"
+                                                    type="onlyThisMemory" use="optional" />
+                                                <xs:attribute name="incremento"
+                                                    type="maxDecimal" use="required" />
+                                                <xs:attribute name="accesorio" type="xs:IDREF"
+                                                    use="optional" />
+
+                                                <xs:attribute name="garantia"
+                                                    type="onlyThisNumebers" use="optional" />
+
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:choice>
+                                    <xs:attribute name="categoria" type="xs:IDREF"
+                                        use="required" />
+                                    <xs:attribute name="marca" type="xs:IDREF"
+                                        use="required" />
+                                    <xs:attribute name="modelo" type="xs:string"
+                                        use="required" />
+                                    <xs:attribute name="memoria" type="onlyThisMemory"
+                                        use="optional" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
                     </xs:complexType>
-                    <xs:complexType>
-                        
-                        <!-- <xs:choice>
-                            <xs:element name="estado" maxOccurs="unbounded"/>
-                            <xs:element name="extra" maxOccurs="unbounded"/> 
-                        </xs:choice>                         -->
-                    </xs:complexType>
+
                 </xs:element>
             </xs:sequence>
 
-            
+
         </xs:complexType>
 
     </xs:element>
