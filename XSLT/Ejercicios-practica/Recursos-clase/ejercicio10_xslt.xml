@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<empresa>
+    <departamento>
+        <nombre>RRHH</nombre>
+        <empleado>
+            <nombre>Joaquín</nombre>
+        </empleado>
+    </departamento>
+</empresa>
