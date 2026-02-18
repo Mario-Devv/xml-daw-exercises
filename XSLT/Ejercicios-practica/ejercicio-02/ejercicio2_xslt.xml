@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ejercicio2_xslt.xsl" type="text/xsl"?>
+<biblioteca>
+    <libro>
+        <titulo>El legado de Arthas</titulo>
+    </libro>
+    <libro>
+        <titulo>El ascenso de Illidan</titulo>
+    </libro>
+</biblioteca>
