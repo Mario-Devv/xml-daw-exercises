@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ejercicio3_xslt.xsl" type="text/xsl"?>
+<biblioteca>
+    <libro categoria="tecnologia">
+        <titulo>C para Dummies</titulo>
+    </libro>
+    <libro categoria="novela">
+        <titulo>La plaga del cielo</titulo>
+    </libro>
+</biblioteca>
