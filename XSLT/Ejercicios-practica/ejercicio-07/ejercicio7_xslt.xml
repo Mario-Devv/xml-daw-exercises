@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ejercicio7_xslt.xsl" type="text/xsl"?>
+<productos>
+    <producto stock="10">Portátil Asus ROG</producto>
+    <producto stock="0">Teléfono Samsung A51</producto>
+</productos>
