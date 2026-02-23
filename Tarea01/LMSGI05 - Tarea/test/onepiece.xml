@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="onepiece.xsl" type="text/xsl"?>
+<onepiece>
+    <serie>
+        <titulo>One Piece</titulo>
+        <autor>Eiichiro Oda</autor>
+        <sinopsis>Un joven pirata busca el tesoro legendario conocido como One Piece.</sinopsis>
+    </serie>
+
+    <tripulacion nombre="Sombrero de Paja">
+        <miembro id="m1" recompensa="3000000000">
+            <nombre>Monkey D. Luffy</nombre>
+            <rol>Capitán</rol>
+        </miembro>
+
+        <miembro id="m2" recompensa="1111000000">
+            <nombre>Roronoa Zoro</nombre>
+            <rol>Espadachín</rol>
+        </miembro>
+
+        <miembro id="m3" recompensa="366000000">
+            <nombre>Nami</nombre>
+            <rol>Navegante</rol>
+        </miembro>
+    </tripulacion>
+
+    <eventos>
+        <evento importancia="alta">
+            <titulo>Derrota de Crocodile</titulo>
+            <descripcion>Luffy derrota a Crocodile en Arabasta.</descripcion>
+        </evento>
+
+        <evento importancia="muy alta">
+            <titulo>Guerra de Marineford</titulo>
+            <descripcion>Gran batalla entre piratas y la Marina.</descripcion>
+        </evento>
+
+        <evento importancia="media">
+            <titulo>Derrota de Arlong</titulo>
+            <descripcion>Luffy libera el pueblo de Nami.</descripcion>
+        </evento>
+    </eventos>
+</onepiece>
