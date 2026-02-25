@@ -5,73 +5,80 @@
             <head>
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="stylesheet" href="./reset.css" />
+                <link rel="stylesheet" href="./styles.css" />
                 <title>OnePiece</title>
             </head>
             <body>
-                <header>
-                    <h1>
-                        <xsl:value-of select="//serie/titulo" />
-                    </h1>
-                </header>
-                <main>
-                    <main>
-                        <p>
-                            <xsl:value-of select="//serie/sinopsis" />
-                        </p>
-
+                <header class="header">
+                    <div class="header__box">
+                        <!-- LOGO -->
+                        <img class="header__logo" src="./img/Anchor.webp" alt="Ancla" />
                         <div>
-                            <h2>Tripulación</h2>
-
-                            <table border="1">
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Rol</th>
-                                    <th>Recompensa</th>
-
-                                </tr>
-
-                                <xsl:for-each select="//tripulacion/miembro">
-                                    <tr>
-                                        <td>
-                                            <xsl:value-of select="./nombre" />
-                                        </td>
-
-                                        <td>
-                                            <xsl:value-of select="./rol" />
-                                        </td>
-
-                                        <td>
-                                            <xsl:value-of select="./@recompensa" />
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                    </tr>
-
-                                </xsl:for-each>
-
-
-                            </table>
+                            <h1 class="header__title">
+                                <xsl:value-of select="//serie/titulo" />
+                            </h1>
+                            <p class="header__psinopsis">
+                                <xsl:value-of select="//serie/sinopsis" />
+                            </p>
                         </div>
 
-                        <h2>
-                            Eventos importantes
-                        </h2>
-                        <nav>
-                            <ul>
-                                <xsl:for-each select="//eventos/evento[@importancia='muy alta' or @importancia='alta']">
+                    </div>
+                </header>
+
+                <main class="main">
+
+                    <div class="main__box">
+                        <h2 class="main__box_title">Tripulación</h2>
+
+                        <table class="main__box_table">
+                            <tr class="box__table_thead">
+                                <th>Nombre</th>
+                                <th>Rol</th>
+                                <th>Recompensa</th>
+                            </tr>
+
+                            <xsl:for-each select="//tripulacion/miembro">
+                                <tr>
+                                    <td>
+                                        <xsl:value-of select="./nombre" />
+                                    </td>
+
+                                    <td>
+                                        <xsl:value-of select="./rol" />
+                                    </td>
+
+                                    <td>
+                                        <xsl:value-of select="./@recompensa" />
+                                    </td>
+                                </tr>
+                            </xsl:for-each>
+
+
+                        </table>
+                    </div>
+
+                    <h2>
+                        Eventos importantes
+                    </h2>
+                    <nav>
+                        <ul>
+                            <xsl:for-each
+                                select="//eventos/evento[@importancia='muy alta' or @importancia='alta']">
+
                                 <li>
                                     <p>
-                                        <b><xsl:value-of select="./titulo" /></b>
-                                        - 
-                                        <xsl:value-of select="./descripcion" />
+                                        <b>
+                                            <xsl:value-of select="./titulo" />
+                                        </b>
+        - <xsl:value-of select="./descripcion" />
                                     </p>
-                                </li>    
-                                </xsl:for-each>
-                            </ul>
-                        </nav>
-                    </main>
+                                </li>
+                            </xsl:for-each>
+                        </ul>
+                    </nav>
                 </main>
+
             </body>
         </html>
     </xsl:template>
