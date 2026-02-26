@@ -40,15 +40,15 @@
 
                             <xsl:for-each select="//tripulacion/miembro">
                                 <tr>
-                                    <td>
+                                    <td class="nombre">
                                         <xsl:value-of select="./nombre" />
                                     </td>
 
-                                    <td>
+                                    <td class="rol">
                                         <xsl:value-of select="./rol" />
                                     </td>
 
-                                    <td>
+                                    <td class="recompensa">
                                         <xsl:value-of select="./@recompensa" />
                                     </td>
                                 </tr>
@@ -58,25 +58,32 @@
                         </table>
                     </div>
 
-                    <h2>
-                        Eventos importantes
-                    </h2>
-                    <nav>
-                        <ul>
-                            <xsl:for-each
-                                select="//eventos/evento[@importancia='muy alta' or @importancia='alta']">
+                    <div class="box__events">
 
-                                <li>
-                                    <p>
-                                        <b>
-                                            <xsl:value-of select="./titulo" />
-                                        </b>
-        - <xsl:value-of select="./descripcion" />
-                                    </p>
-                                </li>
-                            </xsl:for-each>
-                        </ul>
-                    </nav>
+                        <h2 class="events__title">
+                            Eventos importantes
+                        </h2>
+                        <nav>
+                            <ul class="events_menu">
+                                <xsl:for-each
+                                    select="//eventos/evento[@importancia='muy alta' or @importancia='alta']">
+
+                                    <li class="events__menu_list">
+                                        <div>
+                                            <p>
+                                                <b>
+                                                    <xsl:value-of select="./titulo" />
+                                                </b>
+                                            </p>
+                                            <p>
+                                                <xsl:value-of select="./descripcion" />
+                                            </p>
+                                        </div>
+                                    </li>
+                                </xsl:for-each>
+                            </ul>
+                        </nav>
+                    </div>
                 </main>
 
             </body>
