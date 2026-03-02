@@ -66,7 +66,8 @@
                         <nav>
                             <ul class="events_menu">
                                 <xsl:for-each
-                                    select="//eventos/evento[@importancia='muy alta' or @importancia='alta']">
+                                    select="//eventos/evento">
+                                    <xsl:if test="@importancia='muy alta' or @importancia='alta'">
 
                                     <li class="events__menu_list">
                                         <div>
@@ -80,6 +81,7 @@
                                             </p>
                                         </div>
                                     </li>
+                                    </xsl:if>
                                 </xsl:for-each>
                             </ul>
                         </nav>
