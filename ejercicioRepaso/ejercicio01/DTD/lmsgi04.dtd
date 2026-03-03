@@ -1,0 +1,22 @@
+<!ELEMENT resumenIVA (presentacion, soportado?, repercutido?)>
+<!ELEMENT presentacion (periodo, presentador, liquidacion, observaciones?)>
+    <!ELEMENT periodo EMPTY>
+    <!ELEMENT presentador EMPTY>
+    <!ELEMENT liquidacion EMPTY>
+    <!ELEMENT observaciones (#PCDATA)>
+        <!ATTLIST presentacion fecha CDATA #REQUIRED>
+        <!ATTLIST periodo desde CDATA #REQUIRED>
+        <!ATTLIST periodo hasta CDATA #REQUIRED>
+        <!ATTLIST presentador cif CDATA #REQUIRED>
+        <!ATTLIST presentador razon CDATA #REQUIRED>
+        <!ATTLIST liquidacion importe CDATA #REQUIRED>
+        <!ATTLIST liquidacion iban CDATA #IMPLIED>
+        <!ATTLIST liquidacion cargo CDATA #REQUIRED>
+<!ELEMENT soportado (iva+)>
+<!ELEMENT repercutido (iva+)>
+    <!ELEMENT iva EMPTY>
+        <!ATTLIST iva porcentaje CDATA #REQUIRED>
+        <!ATTLIST iva base CDATA #REQUIRED>
+        <!ATTLIST iva cuota CDATA #REQUIRED>
+<!ATTLIST soportado total CDATA #REQUIRED>
+<!ATTLIST repercutido total CDATA #REQUIRED>
