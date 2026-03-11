@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<studioGhibli>
+    <director id="d1">
+        <name>Hayao Miyazaki</name>
+        <birthYear>1941</birthYear>
+        <nationality>Japonesa</nationality>
+        <notableWorks>
+            <work>Mi vecino Totoro</work>
+            <work>El viaje de Chihiro</work>
+            <work>La princesa Mononoke</work>
+            <work>El castillo ambulante</work>
+        </notableWorks>
+    </director>
+
+    <studio id="s1">
+        <name>Studio Ghibli</name>
+        <founded>1985</founded>
+        <founders>
+            <founder>Hayao Miyazaki</founder>
+            <founder>Isao Takahata</founder>
+        </founders>
+        <location>Tokio, Japón</location>
+    </studio>
+
+    <movies>
+        <movie id="m1" directorRef="d1" studioRef="s1">
+            <title>Mi vecino Totoro</title>
+            <releaseYear>1988</releaseYear>
+            <genre>Fantasía</genre>
+            <characters>
+                <characterRef>c1</characterRef>
+                <characterRef>c2</characterRef>
+            </characters>
+        </movie>
+
+        <movie id="m2" directorRef="d1" studioRef="s1">
+            <title>El viaje de Chihiro</title>
+            <releaseYear>2001</releaseYear>
+            <genre>Fantasía</genre>
+            <characters>
+                <characterRef>c3</characterRef>
+                <characterRef>c4</characterRef>
+            </characters>
+        </movie>
+
+        <movie id="m3" directorRef="d1" studioRef="s1">
+            <title>La princesa Mononoke</title>
+            <releaseYear>1997</releaseYear>
+            <genre>Aventura</genre>
+            <characters>
+                <characterRef>c5</characterRef>
+                <characterRef>c6</characterRef>
+            </characters>
+        </movie>
+    </movies>
+
+    <characters>
+        <character id="c1">
+            <name>Totoro</name>
+            <movieRef>m1</movieRef>
+            <description>Espíritu del bosque amigable y peludo.</description>
+        </character>
+        <character id="c2">
+            <name>Satsuki Kusakabe</name>
+            <movieRef>m1</movieRef>
+            <description>Niña curiosa y valiente que se muda al campo con su familia.</description>
+        </character>
+        <character id="c3">
+            <name>Chihiro Ogino</name>
+            <movieRef>m2</movieRef>
+            <description>Joven que queda atrapada en un mundo espiritual y debe rescatar a sus padres.</description>
+        </character>
+        <character id="c4">
+            <name>Haku</name>
+            <movieRef>m2</movieRef>
+            <description>Espíritu del río y aliado de Chihiro.</description>
+        </character>
+        <character id="c5">
+            <name>Ashitaka</name>
+            <movieRef>m3</movieRef>
+            <description>Príncipe que busca una cura para su maldición.</description>
+        </character>
+        <character id="c6">
+            <name>San</name>
+            <movieRef>m3</movieRef>
+            <description>Joven criada por lobos que lucha por proteger el bosque.</description>
+        </character>
+    </characters>
+</studioGhibli>
