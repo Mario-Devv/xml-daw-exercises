@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="ejercicio6_xslt.xsl" type="text/xsl"?>
-<personas>
-    <persona>
-        <nombre>Jesús</nombre>
-        <apellido>Sánchez</apellido>
-    </persona>
-</personas>

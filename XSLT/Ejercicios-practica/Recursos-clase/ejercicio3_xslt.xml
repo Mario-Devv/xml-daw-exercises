@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<biblioteca>
-    <libro categoria="tecnologia">
-        <titulo>C para Dummies</titulo>
-    </libro>
-    <libro categoria="novela">
-        <titulo>La plaga del cielo</titulo>
-    </libro>
-</biblioteca>
